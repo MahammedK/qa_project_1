@@ -1,0 +1,9 @@
+<h1>Below are the list of promotions</h1>
+
+{% block content %}
+
+{% for object in list_of_promotions %}
+<p>{{ object.name }}</p>
+{% endfor %}
+
+{% endblock content %}

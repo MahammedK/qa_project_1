@@ -1,0 +1,24 @@
+<h1>Title</h1>
+
+{% block content %}
+    <body>
+        <p>
+            <div class="form">
+                <form method="POST" action="">
+                    {{ form.hidden_tag() }}
+                    {{ form.name.label }} {{ form.name }}
+                    <br>
+                    {{ form.owner.label }} {{ form.owner }}
+                    <br>
+                    {{ form.based.label }} {{ form.based }}
+                    <br>
+                    {{ form.submit }}
+                    <br>
+                {{ message }}
+                </form>
+            </div>
+        </p>
+    </body>
+{% endblock content %}
+
+
