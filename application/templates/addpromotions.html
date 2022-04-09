@@ -1,5 +1,5 @@
-<h1>Title</h1>
-
+{% extends 'main.html' %}
+{% block title %}Add a Promotion{% endblock %}
 {% block content %}
     <body>
         <p>
@@ -14,7 +14,6 @@
                     <br>
                     {{ form.submit }}
                     <br>
-                {{ message }}
                 </form>
             </div>
         </p>

@@ -1,16 +1,8 @@
-<!-- extend navbar -->
+{% extends 'main.html' %}
 
-<h1>Welcome to the MMA Hub</h1>
+{% block title %} Welcome to the MMA Hub {% endblock %}
 
+{% block content %}
 <p>On this website you will be able to add, edit, view and remove fighters from select promotions.</p>
 <p>A bar has been added to allow navigation across the site.</p>
-
-
-<!-- <html>
-<body>
-<h1>Welcome to MMA Central</h1>
-{% block content %}
-<p>Here you can add, edit and remove fighters from various MMA promotions all over the world</p>
-{% endblock content %}
-</body>
-</html> -->
+{% endblock %}

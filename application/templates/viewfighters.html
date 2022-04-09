@@ -3,7 +3,9 @@
 {% block content %}
 
 {% for object in list_of_fighters %}
-<p>{{ object.name }}</p>
+<p>{{ object.name }}</p> <a href="{{ url_for('viewfighters', name = promotions.name) }}"><button type="button">edit</button></a></p><br>
+<p>{{ object.owner }}</p> <a href="{{ url_for('viewfighters', owner = promotions.owner) }}"><button type="button">edit</button></a></p><br>
+<p>{{ object.based }}</p> <a href="{{ url_for('viewfighters', based = promotions.based) }}"><button type="button">edit</button></a></p><br>
 {% endfor %}
 
 {% endblock content %}

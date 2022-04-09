@@ -10,9 +10,9 @@ class Promotions(db.Model):
     fighters = db.relationship("Fighters", backref="promotionsbr")
 
 class PromotionsForm(FlaskForm):
-    name = StringField("Promotion Name")
-    owner = StringField("Owner Name")
-    based = StringField("Country promotion is based")
+    name = StringField("Promotion Name: ")
+    owner = StringField("Owner Name: ")
+    based = StringField("Country promotion is based: ")
     submit = SubmitField("Submit")
 
 class Fighters(db.Model):
@@ -23,8 +23,8 @@ class Fighters(db.Model):
     promotions_id = db.Column(db.Integer, db.ForeignKey('promotions.id'), nullable=False)
 
 class FightersForm(FlaskForm):
-    name = StringField("Fighter Name")
-    weightclass = SelectField("Fighters Weightclass", choices=[
+    name = StringField("Fighter Name: ")
+    weightclass = SelectField("Fighters Weightclass: ", choices=[
         ("flyweight", "Flyweight"),
         ("bantamweight", "Bantamweight"),
         ("featherweight", "Featherweight"),
@@ -38,5 +38,5 @@ class FightersForm(FlaskForm):
         ("womens bantamweight", "Women's Bantamweight"),
         ("womens featherweight", "Women's Featherweight")
     ])
-    based = StringField("Country fighter is based")
+    based = StringField("Country fighter is based: ")
     submit = SubmitField("Submit")

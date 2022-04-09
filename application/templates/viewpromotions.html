@@ -1,9 +1,10 @@
+{% extends 'main.html' %}
 <h1>Below are the list of promotions</h1>
 
 {% block content %}
 
 {% for object in list_of_promotions %}
-<p>{{ object.name }}</p>
+<p>{{ object.name }}, {{ object.owner }}, {{ object.based }}</p>
 {% endfor %}
 
 {% endblock content %}
