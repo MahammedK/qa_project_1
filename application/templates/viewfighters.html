@@ -5,8 +5,8 @@
 {% block content %}
 <h3>View all promotions</h3>
 
-{% for object in list_of_fighters %}
-    Name: {{ object.fighter_name }}, Weightclass:{{ object.fighters_weightclass }}, Based: {{ object.fighters_based }}, Promotion: {{ object.promotionsbr.promotions_name }} <a href="{{ url_for('delete', fighters_name = object.fighters_name) }}"><button type="button">Delete</button></a></p><br>
+{% for fighters in list_of_fighters %}
+    Name: {{ fighters.fighters_name }}, Weightclass: {{ fighters.fighters_weightclass }}, Based: {{ fighters.fighters_based }}, Promotion: {{ fighters.promotionsbr.promotions_name }} <a href="{{ url_for('update', fighters_name = object.fighters_name) }}"><button type="button">Update</button></a><a href="{{ url_for('delete', fighters_name = object.fighters_name) }}"><button type="button">Delete</button></a></p><br>
 {% endfor %}
 
 {% endblock content %}

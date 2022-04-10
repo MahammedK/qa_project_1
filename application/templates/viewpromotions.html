@@ -4,8 +4,8 @@
 
 {% block content %}
 <h3>View all promotions</h3>
-{% for object in list_of_promotions %}
-    Name: {{ object.promotions_name }}, Owner: {{ object.promotions_owner }}, Based: {{ object.promotions_based }} 
+{% for promotions in list_of_promotions %}
+    Name: {{ promotions.promotions_name }}, Owner: {{ promotions.promotions_owner }}, Based: {{ promotions.promotions_based }} <a href="{{ url_for('delete_promotions', promotions_name = object.promotions_name) }}"><button type="button">Delete</button></a></p><br>
 {% endfor %}
 
 {% endblock content %}

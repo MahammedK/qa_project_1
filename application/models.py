@@ -9,9 +9,6 @@ class Promotions(db.Model):
     promotions_based = db.Column(db.String(50), nullable=False)
     fighters = db.relationship("Fighters", backref="promotionsbr")
 
-def __repr__(self):
-        return 'Choose {}'.format(self.promotions_name)
-
 class PromotionsForm(FlaskForm):
     promotions_name = StringField("Promotion Name: ")
     promotions_owner = StringField("Owner Name: ")
