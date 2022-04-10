@@ -3,7 +3,6 @@ from application.models import Promotions, Fighters, PromotionsForm, FightersFor
 from flask import Flask, render_template, request, url_for, redirect
 
 @app.route('/')
-@app.route('/home')
 def home():
     return render_template('index.html')
 
@@ -13,9 +12,9 @@ def addpromotions():
     if request.method == "POST":
         if form.validate_on_submit():
             new_promotion = Promotions(
-                name = form.name.data,
-                owner = form.owner.data,
-                based = form.based.data
+                promotions_name = form.promotions_name.data,
+                promotions_owner = form.promotions_owner.data,
+                promotions_based = form.promotions_based.data
             )
             db.session.add(new_promotion)
             db.session.commit()
@@ -25,8 +24,8 @@ def addpromotions():
     else:
         return render_template('addpromotions.html', form=form)
 
-@app.route('/promotions')
-def promotions():
+@app.route('/viewpromotions')
+def viewpromotions():
     list_of_promotions = Promotions.query.all()
     return render_template('viewpromotions.html', list_of_promotions=list_of_promotions)
 
@@ -37,28 +36,35 @@ def promotions():
 #     return render_template('updatepromotions.html', updatepromotions=updatepromotions)
 
 
-# @app.route('/addfighters', methods = ['GET','POST'])
-# def addfighters():
-#     form = FightersForm()
-#     promotions = request.form.get.first('promotions_id')
-#     if request.method == "POST":
-#         if form.validate_on_submit():
-#             new_fighter = Fighters(
-#                 name = form.name.data,
-#                 weightclass = form.weightclass.data,
-#                 based = form.based.data,
-#                 promotions_id = promotions
-#             )
-#             db.session.add(new_fighter)
-#             db.session.commit()
-#             return redirect(url_for("addfighters"))
-#     else:
-#         return render_template('addfighters.html', form=form)
+@app.route('/addfighters', methods = ['GET','POST'])
+def addfighters():
+    form = FightersForm()
+    form.promotions_name.choices = [(promotions.id, promotions.promotions_name) for promotions in Promotions.query.order_by(Promotions.promotions_name).all()]
+    if request.method == "POST":
+        if form.validate_on_submit():
+            new_fighter = Fighters(
+                fighters_name = form.fighters_name.data,
+                fighters_weightclass = form.fighters_weightclass.data,
+                fighters_based = form.fighters_based.data,
+                promotions_id = form.promotions_name.data
+            )
+            db.session.add(new_fighter)
+            db.session.commit()
+            return redirect(url_for("addfighters"))
+    else:
+        return render_template('addfighters.html', form=form)
 
-# @app.route('/fighters')
-# def fighters():
-#     list_of_fighters = Fighters.query.all()
-#     return render_template('viewfighters.html', list_of_fighters=list_of_fighters)
+@app.route('/viewfighters')
+def viewfighters():
+    list_of_fighters = Fighters.query.all()
+    return render_template('viewfighters.html', list_of_fighters=list_of_fighters)
+
+@app.route('/delete/<fighters_name>', methods = ['GET', 'DELETE'])
+def delete(fighters_name):
+    deletefighter = Fighters.query.filter_by(fighters_name=fighters_name).first()
+    db.session.delete(deletefighter)
+    db.session.commit()
+    return redirect(url_for('viewfighters'))
 
 
 

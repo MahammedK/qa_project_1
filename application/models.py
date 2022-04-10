@@ -4,27 +4,30 @@ from wtforms import StringField, SubmitField, SelectField
 
 class Promotions(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    name = db.Column(db.String(50), unique=True)
-    owner = db.Column(db.String(50), nullable=False)
-    based = db.Column(db.String(50), nullable=False)
+    promotions_name = db.Column(db.String(50), unique=True)
+    promotions_owner = db.Column(db.String(50), nullable=False)
+    promotions_based = db.Column(db.String(50), nullable=False)
     fighters = db.relationship("Fighters", backref="promotionsbr")
 
+def __repr__(self):
+        return 'Choose {}'.format(self.promotions_name)
+
 class PromotionsForm(FlaskForm):
-    name = StringField("Promotion Name: ")
-    owner = StringField("Owner Name: ")
-    based = StringField("Country promotion is based: ")
+    promotions_name = StringField("Promotion Name: ")
+    promotions_owner = StringField("Owner Name: ")
+    promotions_based = StringField("Country promotion is based: ")
     submit = SubmitField("Submit")
 
 class Fighters(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    name = db.Column(db.String(50), nullable=False)
-    weightclass = db.Column(db.String(50), nullable=False)
-    based = db.Column(db.String(50), nullable=False)
+    fighters_name = db.Column(db.String(50), nullable=False)
+    fighters_weightclass = db.Column(db.String(50), nullable=False)
+    fighters_based = db.Column(db.String(50), nullable=False)
     promotions_id = db.Column(db.Integer, db.ForeignKey('promotions.id'), nullable=False)
 
 class FightersForm(FlaskForm):
-    name = StringField("Fighter Name: ")
-    weightclass = SelectField("Fighters Weightclass: ", choices=[
+    fighters_name = StringField("Fighter Name: ")
+    fighters_weightclass = SelectField("Fighters Weightclass: ", choices=[
         ("flyweight", "Flyweight"),
         ("bantamweight", "Bantamweight"),
         ("featherweight", "Featherweight"),
@@ -38,5 +41,6 @@ class FightersForm(FlaskForm):
         ("womens bantamweight", "Women's Bantamweight"),
         ("womens featherweight", "Women's Featherweight")
     ])
-    based = StringField("Country fighter is based: ")
+    fighters_based = StringField("Country fighter is based: ")
+    promotions_name = SelectField (u'Promotion Name', choices = [])
     submit = SubmitField("Submit")

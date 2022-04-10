@@ -1,16 +1,21 @@
-<h1>Title</h1>
+{% extends 'main.html' %}
+
+{% block title %} Add Fighters {% endblock %}
 
 {% block content %}
+<h3>Add a fighter</h3>
     <body>
         <p>
             <div class="form">
                 <form method="POST" action="">
                     {{ form.hidden_tag() }}
-                    {{ form.name.label }} {{ form.name }}
+                    {{ form.fighters_name.label }} {{ form.fighters_name }}
                     <br>
-                    {{ form.weightclass.label }} {{ form.weightclass }}
+                    {{ form.fighters_weightclass.label }} {{ form.fighters_weightclass }}
                     <br>
-                    {{ form.based.label }} {{ form.based }}
+                    {{ form.fighters_based.label }} {{ form.fighters_based }}
+                    <br>
+                    {{ form.promotions_name.label }} {{ form.promotions_name }}
                     <br>
                     {{ form.submit }}
                     <br>

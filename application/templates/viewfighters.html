@@ -1,11 +1,12 @@
-<h1>Below are the list of fighters</h1>
+{% extends 'main.html' %}
+
+{% block title %} List of Fighters {% endblock %}
 
 {% block content %}
+<h3>View all promotions</h3>
 
 {% for object in list_of_fighters %}
-<p>{{ object.name }}</p> <a href="{{ url_for('viewfighters', name = promotions.name) }}"><button type="button">edit</button></a></p><br>
-<p>{{ object.owner }}</p> <a href="{{ url_for('viewfighters', owner = promotions.owner) }}"><button type="button">edit</button></a></p><br>
-<p>{{ object.based }}</p> <a href="{{ url_for('viewfighters', based = promotions.based) }}"><button type="button">edit</button></a></p><br>
+    Name: {{ object.fighter_name }}, Weightclass:{{ object.fighters_weightclass }}, Based: {{ object.fighters_based }}, Promotion: {{ object.promotionsbr.promotions_name }} <a href="{{ url_for('delete', fighters_name = object.fighters_name) }}"><button type="button">Delete</button></a></p><br>
 {% endfor %}
 
 {% endblock content %}

@@ -1,10 +1,11 @@
 {% extends 'main.html' %}
-<h1>Below are the list of promotions</h1>
+
+{% block title %} List of Promotions {% endblock %}
 
 {% block content %}
-
+<h3>View all promotions</h3>
 {% for object in list_of_promotions %}
-<p>{{ object.name }}, {{ object.owner }}, {{ object.based }}</p>
+    Name: {{ object.promotions_name }}, Owner: {{ object.promotions_owner }}, Based: {{ object.promotions_based }} 
 {% endfor %}
 
 {% endblock content %}
