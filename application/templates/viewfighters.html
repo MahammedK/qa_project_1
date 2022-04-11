@@ -3,7 +3,7 @@
 {% block title %} List of Fighters {% endblock %}
 
 {% block content %}
-<h3>View all promotions</h3>
+<h3>View all fighters</h3>
 
 {% for fighters in list_of_fighters %}
     Name: {{ fighters.fighters_name }}, Weightclass: {{ fighters.fighters_weightclass }}, Based: {{ fighters.fighters_based }}, Promotion: {{ fighters.promotionsbr.promotions_name }} <a href="{{ url_for('update', fighters_name = fighters.fighters_name) }}"><button type="button">Update</button></a><a href="{{ url_for('delete', fighters_name = fighters.fighters_name) }}"><button type="button">Delete</button></a></p><br>
