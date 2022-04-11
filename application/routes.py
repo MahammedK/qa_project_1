@@ -29,12 +29,15 @@ def viewpromotions():
     list_of_promotions = Promotions.query.all()
     return render_template('viewpromotions.html', list_of_promotions=list_of_promotions)
 
-@app.route('/delete_promotions/<promotions_name>', methods=['GET', 'DELETE'])
-def delete_promotions(promotions_name):
-    deletepromotion = Promotions.query.filter_by(promotions_name=promotions_name).first()
-    db.session.delete(deletepromotion)
-    db.session.commit()
-    return redirect(url_for('viewpromotions'))
+@app.route('/delete_promotions/<int:id>', methods=['GET', 'DELETE'])
+def delete_promotions(id):
+    deletepromotion = Promotions.query.filter_by(id=id).first()
+    if deletepromotion:
+        db.session.delete(deletepromotion)
+        db.session.commit()
+        return redirect(url_for('viewpromotions'))
+    else:
+        return render_template('viewpromotions.html', id=id)
 
 @app.route('/addfighters', methods = ['GET','POST'])
 def addfighters():
