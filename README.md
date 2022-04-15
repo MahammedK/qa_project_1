@@ -10,7 +10,7 @@ To simplify, I have to create an application that uses the CRUD(Create, Read, Up
 
 I plan to create an app that allows users to view MMA fighters that are signed to a particular MMA promotion. Users will be able to input details of a fighter and assigning it to the details of a promotion. To better explain the CRUD functionality of the app, check the table below.
 
-| CRUD |
+| CRUD | Applied too |
 | --- | --- |
 | Create | - Promotion - Fighter |
 | Read | - Promotion - Fighter |
