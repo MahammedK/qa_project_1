@@ -12,13 +12,13 @@ I plan to create an app that allows users to view MMA fighters that are signed t
 
 | **CRUD** |
 | --- | --- |
-| Create |- Promotion
-- Fighter|
-| Read |- Promotion
-- Fighter|
-| Update |- Fighter|
-| Delete |- Fighter
-- Promotion|
+| Create | - Promotion
+- Fighter |
+| Read | - Promotion
+- Fighter |
+| Update | - Fighter| 
+| Delete | - Fighter
+- Promotion |
 
 ### User Stories, Acceptance Criteria &amp; Story Points
 
@@ -48,7 +48,7 @@ The chosen ERD style was UML as it looks for presentable and easy to understand 
 ![2CIPipeline](https://user-images.githubusercontent.com/101266645/163552551-71d24848-5114-432b-8f95-757105c9eb02.png)
 
 | **CI Pipeline** |
-| --- | ---|
+| --- | --- |
 | Project Tracking – Trello | Work is set out and branches/tasks are created on Version Control System. |
 | Version Control System – Git &amp; GitHub | Git – Software on computer that takes snapshots of work done. GitHub – Remote destination that snapshots can be pushed to. |
 | Source Code - Developer | Pulls down latest version of code.Can push up to main branch. |
