@@ -125,11 +125,13 @@ Below is the code created to run the tests
 
 When initially running the code almost all the tests failed. However, I ensured to make edits to get the pass rate above 80%. One the main issues encountered was the status code for a delete function. For a working route the status code needed to be 200, however this is different for a delete route which is 302. Another issue was adding the correct parameter/argument within the url\_for. This involved a lot of referring back to other files to ensure the parameter inserted was correct.
 
-![](RackMultipart20220411-4-mw5liq_html_d4244587b2396808.png)As for the 1 failed test, time was spent trying to covert it to passed but I was unsuccessful. Given more time I probably would have succeeded. Included below are the results from VS Code and also Jenkins.
+As for the 1 failed test, time was spent trying to convert it to passed but I was unsuccessful. Given more time I probably would have succeeded. Included below are the results from VS Code and also Jenkins.
 
-![](RackMultipart20220411-4-mw5liq_html_21e5efb506d71635.png)
+![11VSTest](https://user-images.githubusercontent.com/101266645/163558800-c862cdd6-31d0-4f0a-8e61-8ff6274dc979.png)
 
-![](RackMultipart20220411-4-mw5liq_html_7a39eb8c1c9f1e2.png)
+![12Jenkinstest](https://user-images.githubusercontent.com/101266645/163558807-8a81f6be-93ba-40e4-931d-dd6bc7a386fc.png)
+
+![13JenkinsTest](https://user-images.githubusercontent.com/101266645/163558817-cdf89262-c993-42c4-adb7-57b0f57bdc77.png)
 
 ### Improvements
 
