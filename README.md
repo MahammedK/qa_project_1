@@ -12,13 +12,10 @@ I plan to create an app that allows users to view MMA fighters that are signed t
 
 | CRUD | Applied on |
 | --- | --- |
-| Create | - Promotions 
-- Fighters |
-| Read | - Promotions 
-- Fighters |
+| Create | - Promotions - Fighters |
+| Read | - Promotions - Fighters |
 | Update | - Fighters | 
-| Delete | - Fighters 
-- Promotions |
+| Delete | - Fighters - Promotions |
 
 ### User Stories, Acceptance Criteria &amp; Story Points
 
