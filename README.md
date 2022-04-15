@@ -10,12 +10,15 @@ To simplify, I have to create an application that uses the CRUD(Create, Read, Up
 
 I plan to create an app that allows users to view MMA fighters that are signed to a particular MMA promotion. Users will be able to input details of a fighter and assigning it to the details of a promotion. To better explain the CRUD functionality of the app, check the table below.
 
-| CRUD | Applied too |
+| CRUD | Applied on |
 | --- | --- |
-| Create | - Promotion - Fighter |
-| Read | - Promotion - Fighter |
-| Update | - Fighter | 
-| Delete | - Fighter - Promotion |
+| Create | - Promotions 
+- Fighters |
+| Read | - Promotions 
+- Fighters |
+| Update | - Fighters | 
+| Delete | - Fighters 
+- Promotions |
 
 ### User Stories, Acceptance Criteria &amp; Story Points
 
@@ -40,11 +43,11 @@ The chosen ERD style was UML as it looks for presentable and easy to understand 
 
 ![1UML](https://user-images.githubusercontent.com/101266645/163552586-087dfd2f-7f61-4b75-b143-960a1179b145.png)
 
-**CI Pipeline**
+### CI Pipeline
 
 ![2CIPipeline](https://user-images.githubusercontent.com/101266645/163552551-71d24848-5114-432b-8f95-757105c9eb02.png)
 
-| **CI Pipeline** |
+| CI Pipeline | What was done in this project |
 | --- | --- |
 | Project Tracking – Trello | Work is set out and branches/tasks are created on Version Control System. |
 | Version Control System – Git &amp; GitHub | Git – Software on computer that takes snapshots of work done. GitHub – Remote destination that snapshots can be pushed to. |
@@ -54,13 +57,13 @@ The chosen ERD style was UML as it looks for presentable and easy to understand 
 | Automated Testing | Once built into a working application, automated tests will be running to test functionality. Tests will be sent back to the build tool then back to Jenkins for developer to be notified to make changes or if tests have passed. |
 | Live Environment | Similar to live environment except not connected to end user. Allows developers opportunity to play around with the product. |
 
-**Project Management – Trello &amp; MVP**
+### Project Management – Trello &amp; MVP
 
 In order to track the progress of the project, Trello was used. The way the board had been laid out was fairly simple. Three columns, &#39;to do&#39;, &#39;doing&#39; and &#39;done&#39;. The list of tasks would be placed in &#39;to do&#39;. When a task was in progress it would be moved into &#39;doing&#39; and upon completion over to &#39;Done&#39;.
 
 Each task has been assigned a coloured tab. The coloured tab represents MoSCoW. MoSCoW is a prioritisation technique used for managing requirements.
 
-| MoSCoW |
+| MoSCoW | Explanation |
 | --- | --- |
 | Must Have | Anything required to make the project work. These are components of the requirements in order to guarantee a minimum viable product (MVP) is achieved. |
 | Should Have | Tasks that would have a noteworthy positive effect on the project. |
@@ -76,11 +79,11 @@ The Trello board only contains two colours, these represent:
 
 This is due to the tasks included only contains tasks that were a necessary part of the project and those that would improve the project in a major way.
 
-**Risk Assessment**
+### Risk Assessment
 
 Risk Assessments are used to ensure a project&#39;s success by evaluating scenarios that may impact the project in a negative way. Making note of potential risks informs an individual ensuring they are aware of what may occur prior to undergoing a particular task. By evaluating risks, I am able to mitigate the damage that may be caused to the project and may design the project such that theses risks are less likely to occur.
 
-| **Description** | **Evaluation** | **Likelihood** | **Impact Level** | **Responsibility** | **Current Control Measures** | **Proposed Control Measures** | **Response** |
+| Description | Evaluation | Likelihood | Impact Level | Responsibility | Current Control Measures | Proposed Control Measures | Response |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 | Program Freezes | Work done may get lost | Med | High | Mahammed Kassam | None | Have multiple backups saved in different locations | Open up autosaved/backup or start project again |
 | Cloud server goes down | Users may not be able to access some of their data | Low | High | Google Cloud Platform | None | Have backup saved on computer | If solely working on cloud server, only thing that can be done is to wait. If a backup is available, continue on the backup. |
@@ -93,7 +96,7 @@ Risk Assessments are used to ensure a project&#39;s success by evaluating scenar
 | Internet going down | Won&#39;t be able to run instances, which in turn will result in not being able to access work saved to cloud | Med | High | Internet Provider | None | Some cloud providers offer offline access. Whether it being a part of a normal or premium account, ensure the cloud provider has this option | Switch to offline access, which gives access to files stored in the cloud without an internet connection |
 | Deleting VM | All work will be lost | Low | High | Mahammed Kassam | Using GitHub to back work up | Along with using GitHub snapshots of the VM can be taken and used to restore previous memory | Git clone last push from GitHub |
 
-**App – What it looks like?**
+### App – What it looks like?
 
 The front-end design was kept very introductory, having a navigation bar that is understandable and can be easily used. Upon entering the URL, the user is welcomed to the home page.
 
@@ -115,7 +118,7 @@ Having entered the fighters&#39; details, the user can then view the fighters wh
 
 ![8ViewFighters](https://user-images.githubusercontent.com/101266645/163553379-1ef8d757-a76c-4b66-bf8d-f4acf3ddcfe6.png)
 
-**Testing and Issues**
+### Testing and Issues
 
 Below is the code created to run the tests
 
@@ -131,7 +134,7 @@ When initially running the code almost all the tests failed. However, I ensured 
 
 ![](RackMultipart20220411-4-mw5liq_html_7a39eb8c1c9f1e2.png)
 
-**Improvements**
+### Improvements
 
 Story points –
 
@@ -149,11 +152,11 @@ Other improvements –
 - Include logos and pictures so users can put a face to the name of the fighter and promotion
 - Have more user stories. Including a lot more user stories enable to view more perspectives from more users as users will all have different needs.
 
-**Authors**
+### Authors
 
 Mahammed Kassam
 
-**Acknowledgements**
+### Acknowledgements
 
 Many thanks go to the trainer, Earl Gray, for all his help, guidance, and patience. The cohort of 22MarEnable1 deserve to be acknowledged for their support and friendly demeanour. Not forgetting Leon Robinson for taking lead on a few sessions at short notice and also Harry Volker for being available to answer questions .
 
