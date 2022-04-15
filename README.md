@@ -1,67 +1,56 @@
 # The MMA App
 
-#### Objective
+### Objective
 
 Create a CRUD application that encapsulates the core modules presented throughout training using supporting tools, methodologies, and technologies.
 
 To simplify, I have to create an application that uses the CRUD(Create, Read, Update and Delete) functions, by using the software&#39;s, resources and techniques that have been provided to me throughout my training program.
 
-**What I plan to create**
+### What I plan to create
 
 I plan to create an app that allows users to view MMA fighters that are signed to a particular MMA promotion. Users will be able to input details of a fighter and assigning it to the details of a promotion. To better explain the CRUD functionality of the app, check the table below.
 
 | **CRUD** |
-| --- |
-| Create |
-- Promotion
-- Fighter
- |
-| Read |
-- Promotion
-- Fighter
- |
-| Update |
-- Fighter
- |
-| Delete |
-- Fighter
-- Promotion
- |
+| --- | --- |
+| Create |- Promotion
+- Fighter|
+| Read |- Promotion
+- Fighter|
+| Update |- Fighter|
+| Delete |- Fighter
+- Promotion|
 
-**User Stories, Acceptance Criteria &amp; Story Points**
+### User Stories, Acceptance Criteria &amp; Story Points
 
-User stories were implemented to create a vision of what the end product would look like. A user story is a description of an end goal from the user&#39;s point of view. ​To understand what a feature requires, an acceptance criterion is attached to the user stories.
+User stories were implemented to create a vision of what the end product would look like. A user story is a description of an end goal from the user&#39;s point of view. To understand what a feature requires, an acceptance criterion is attached to the user stories.
 
 Also attached to the user story are story points. Story points are a way of estimating how much work is required to finish a task. To determine the story point given to a user story PlanningPoker.com. Using the Fibonacci sequence each user story was assigned a number based on difficulty to determine the story point.
 
 - As a product owner, I want to add and remove fighters, so that I can size up potential fights, with a story point value of 13.
-
-Given the user is on the home page, when they enter the fighter&#39;s details, they can add and delete entries.
+  Given the user is on the home page, when they enter the fighter&#39;s details, they can add and delete entries.
 
 - As a user (fan), I want to view promotions, so that I know what promotion my favourite fighter is signed for, with a story point value of 3.
-
-Given the user is on the homepage, when they have selected a promotion, they can view the fighters.
+  Given the user is on the homepage, when they have selected a promotion, they can view the fighters.
 
 - As a user (fighter), I want to view fighters, so that I can see which fighters are in my weight division, with a story point value of 3.
+  Given the user is on the homepage, when they have selected a promotion, they can view fighters in their weight class.
 
-Given the user is on the homepage, when they have selected a promotion, they can view fighters in their weight class.
-
-**ERD**
+### ERD
 
 The ERD (Entity-Relationship Diagram), represents a one-to-many relationship between promotions and fighters table. The one-to-many link dictated that one promotion can have many fighters, but a fighter cannot have many promotions.
 
 The chosen ERD style was UML as it looks for presentable and easy to understand in comparison to Chen. The UML style keep entity types and attributes together whereas in Chen the entity types and attributes are branched out into their own cells.
 
-![](RackMultipart20220411-4-mw5liq_html_d55372def87485b1.png)
+![1UML](https://user-images.githubusercontent.com/101266645/163552586-087dfd2f-7f61-4b75-b143-960a1179b145.png)
 
 **CI Pipeline**
 
-![](RackMultipart20220411-4-mw5liq_html_bae2b6191c49c9a3.png)
+![2CIPipeline](https://user-images.githubusercontent.com/101266645/163552551-71d24848-5114-432b-8f95-757105c9eb02.png)
 
 | **CI Pipeline** |
-| --- |
+| --- | ---|
 | Project Tracking – Trello | Work is set out and branches/tasks are created on Version Control System. |
-| Version Control System – Git &amp; GitHub | Git – Software on computer that takes snapshots of work done.GitHub – Remote destination that snapshots can be pushed to. |
+| Version Control System – Git &amp; GitHub | Git – Software on computer that takes snapshots of work done. GitHub – Remote destination that snapshots can be pushed to. |
 | Source Code - Developer | Pulls down latest version of code.Can push up to main branch. |
 | CI Server – Jenkins | Loaded onto a VM in the cloud.GitHub repository link attached to Jenkins in order to build tool. |
 | Built Tool | Run lines of code and build it into a working application. |
@@ -75,7 +64,7 @@ In order to track the progress of the project, Trello was used. The way the boar
 Each task has been assigned a coloured tab. The coloured tab represents MoSCoW. MoSCoW is a prioritisation technique used for managing requirements.
 
 | MoSCoW |
-| --- |
+| --- | --- |
 | Must Have | Anything required to make the project work. These are components of the requirements in order to guarantee a minimum viable product (MVP) is achieved. |
 | Should Have | Tasks that would have a noteworthy positive effect on the project. |
 | Could Have | Tasks that could be done if there is enough time. |
@@ -84,7 +73,9 @@ Each task has been assigned a coloured tab. The coloured tab represents MoSCoW. 
 The Trello board only contains two colours, these represent:
 
 - Red – Must Have (MVP – Minimum Viable Product)
-- O ![](RackMultipart20220411-4-mw5liq_html_2b8b6d3bfe954465.png) range – Should Have
+- Orange – Should Have
+
+![3Trello](https://user-images.githubusercontent.com/101266645/163552827-b84270aa-e1cf-4976-bca4-2e42aa1cbede.png)
 
 This is due to the tasks included only contains tasks that were a necessary part of the project and those that would improve the project in a major way.
 
@@ -109,29 +100,33 @@ Risk Assessments are used to ensure a project&#39;s success by evaluating scenar
 
 The front-end design was kept very introductory, having a navigation bar that is understandable and can be easily used. Upon entering the URL, the user is welcomed to the home page.
 
-![](RackMultipart20220411-4-mw5liq_html_aa1971de9826a978.png)
+![4Homepage](https://user-images.githubusercontent.com/101266645/163552998-714d1d67-30fd-4fa2-9cef-8ecefdf3078e.png)
 
 Cycling through the navigation, a user may choose to add a promotion. Here they will be presented with three input fields, a promotion name, owner and based.
 
-![](RackMultipart20220411-4-mw5liq_html_690b67cbdfd64f8a.png)
+![5AddAPromotion](https://user-images.githubusercontent.com/101266645/163553096-107a582f-4118-43c1-814b-e1e30bb6f481.png)
 
-![](RackMultipart20220411-4-mw5liq_html_4012ebb71993857.png)Once a promotion has been added the user can thereafter view the promotion they have added. Here the user will see all previous entries and can decide upon which they want to be deleted.
+Once a promotion has been added the user can thereafter view the promotion they have added. Here the user will see all previous entries and can decide upon which they want to be deleted.
+
+![6ViewAllPromotions](https://user-images.githubusercontent.com/101266645/163553259-02a90aa9-f13c-4988-af56-db2c95cbbc3e.png)
 
 Every promotion needs fighters. The user can enter fighter details on the next navigation tab. The requirement fields are, fighter name, fighters weight class which is a select field, country the fighter is based and promotion name which can only be of those promotions that have been added.
 
-![](RackMultipart20220411-4-mw5liq_html_8a9937dfaae97f9d.png)
+![7AddAFighter](https://user-images.githubusercontent.com/101266645/163553311-61649f32-1d61-462e-bd54-10a254d736a8.png)
 
 Having entered the fighters&#39; details, the user can then view the fighters where they have the option to update the fighters details, which updates everything besides the promotion name, and also delete a fighter.
 
-![](RackMultipart20220411-4-mw5liq_html_46c325fa0fee5b80.png)
+![8ViewFighters](https://user-images.githubusercontent.com/101266645/163553379-1ef8d757-a76c-4b66-bf8d-f4acf3ddcfe6.png)
 
 **Testing and Issues**
 
 Below is the code created to run the tests
 
-![](RackMultipart20220411-4-mw5liq_html_84ac0df8f27d2b1a.png)
+![9Test1](https://user-images.githubusercontent.com/101266645/163553502-c393d63d-c2f0-4c7b-a617-22b02d75a1c7.png)
 
-![](RackMultipart20220411-4-mw5liq_html_a59ca51d8cf0579e.png)When initially running the code almost all the tests failed. However, I ensured to make edits to get the pass rate above 80%. One the main issues encountered was the status code for a delete function. For a working route the status code needed to be 200, however this is different for a delete route which is 302. Another issue was adding the correct parameter/argument within the url\_for. This involved a lot of referring back to other files to ensure the parameter inserted was correct.
+![10test2](https://user-images.githubusercontent.com/101266645/163553516-cd2449d6-f1d7-41ee-b123-939296c029da.png)
+
+When initially running the code almost all the tests failed. However, I ensured to make edits to get the pass rate above 80%. One the main issues encountered was the status code for a delete function. For a working route the status code needed to be 200, however this is different for a delete route which is 302. Another issue was adding the correct parameter/argument within the url\_for. This involved a lot of referring back to other files to ensure the parameter inserted was correct.
 
 ![](RackMultipart20220411-4-mw5liq_html_d4244587b2396808.png)As for the 1 failed test, time was spent trying to covert it to passed but I was unsuccessful. Given more time I probably would have succeeded. Included below are the results from VS Code and also Jenkins.
 
